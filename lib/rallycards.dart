@@ -4,7 +4,46 @@ class RallyAlertCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Text('RallyAlertCard placeholder'),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Alerts',
+                  style: Theme.of(context).textTheme.subtitle,
+                ),
+                FlatButton(
+                  onPressed: () {},
+                  child: Text('See All'),
+                  textColor: Theme.of(context).accentColor,
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
+              child: Divider(height: 2),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  "Heads up, you've used up 90% of your\n" +
+                      "Shopping budget for this month.",
+                  style: Theme.of(context).textTheme.body1,
+                ),
+                FlatButton(
+                  onPressed: () {},
+                  child: Text('Sort'),
+                  textColor: Theme.of(context).accentColor,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

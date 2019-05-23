@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 
-// RallyBackground: black
 const Color rallyBackground = Colors.black;
-// RallyGreen: #1EB980
+const Color rallyScaffoldBackgroundColor = Color(0xFF222222);
+const Color rallyCardBackground = Color(0xFF333333);
 const Color rallyGreen = Color(0xFF1EB980);
-// DartRallyGreen: #045D56
 const Color darkRallyGreen = Color(0xFF045D56);
 
 ThemeData buildRallyThemeData(BuildContext context) {
   return ThemeData(
     brightness: Brightness.dark,
     backgroundColor: rallyBackground,
+    scaffoldBackgroundColor: rallyScaffoldBackgroundColor,
     primaryColor: rallyGreen,
     accentColor: rallyGreen,
-    buttonTheme: Theme.of(context)
-        .buttonTheme
-        .copyWith(textTheme: ButtonTextTheme.accent),
     fontFamily: 'Roboto',
     textTheme: TextTheme(
       body1: TextStyle(
@@ -31,15 +28,17 @@ ThemeData buildRallyThemeData(BuildContext context) {
         fontWeight: FontWeight.w500,
       ),
     ),
-    appBarTheme: Theme.of(context).appBarTheme.copyWith(
-          color: rallyBackground,
-          textTheme: TextTheme(
-            title: TextStyle(
-              fontSize: 34.0,
-              fontWeight: FontWeight.normal,
-              color: Colors.white,
-            ),
-          ),
+    appBarTheme: AppBarTheme(
+      color: rallyBackground,
+      textTheme: TextTheme(
+        title: TextStyle(
+          fontSize: 34.0,
+          fontWeight: FontWeight.normal,
+          color: Colors.white,
         ),
+      ),
+    ),
+    cardTheme: CardTheme(color: rallyCardBackground),
+    buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.accent),
   );
 }

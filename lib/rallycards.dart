@@ -15,11 +15,7 @@ class RallyAlertCard extends StatelessWidget {
                   'Alerts',
                   style: Theme.of(context).textTheme.subtitle,
                 ),
-                FlatButton(
-                  onPressed: () {},
-                  child: Text('See All'),
-                  textColor: Theme.of(context).accentColor,
-                ),
+                FlatButton(onPressed: () {}, child: Text('See All')),
               ],
             ),
             Padding(
@@ -34,11 +30,7 @@ class RallyAlertCard extends StatelessWidget {
                       "Shopping budget for this month.",
                   style: Theme.of(context).textTheme.body1,
                 ),
-                FlatButton(
-                  onPressed: () {},
-                  child: Text('Sort'),
-                  textColor: Theme.of(context).accentColor,
-                ),
+                FlatButton(onPressed: () {}, child: Text('Sort')),
               ],
             ),
           ],

@@ -19,9 +19,13 @@ ThemeData buildRallyThemeData(BuildContext context) {
         fontSize: 14.0,
         fontWeight: FontWeight.normal,
       ),
+      body2: TextStyle(
+        fontSize: 20.0,
+        fontWeight: FontWeight.w500,
+      ),
       headline: TextStyle(
-        fontSize: 96.0,
-        fontWeight: FontWeight.bold,
+        fontSize: 48.0,
+        fontWeight: FontWeight.normal,
       ),
       subtitle: TextStyle(
         fontSize: 14.0,

@@ -31,6 +31,11 @@ ThemeData buildRallyThemeData(BuildContext context) {
         fontSize: 14.0,
         fontWeight: FontWeight.w500,
       ),
+      display2: TextStyle(
+        // TODO: This should be 96, but need to make the main viewport scrollable or it wont fit
+        fontSize: 50.0,
+        fontWeight: FontWeight.w100,
+      ),
     ),
     appBarTheme: AppBarTheme(
       color: rallyBackground,

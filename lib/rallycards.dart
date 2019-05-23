@@ -142,8 +142,19 @@ class AccountIndicator extends StatelessWidget {
 class RallyBillsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Text('RallyBillsCard placeholder'),
+    return ConstrainedBox(
+      constraints: BoxConstraints(minWidth: double.infinity),
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            children: <Widget>[
+              Text('Bills', style: Theme.of(context).textTheme.subtitle),
+              Text('\$1,810.00', style: Theme.of(context).textTheme.display2),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const Color rallyBackground = Colors.black;
-const Color rallyScaffoldBackgroundColor = Color(0xFF222222);
+const Color rallyBackground = Color(0xFF26282F);
+const Color rallyScaffoldBackgroundColor = rallyBackground;
 const Color rallyCardBackground = Color(0xFF333333);
 const Color rallyGreen = Color(0xFF1EB980);
 const Color darkRallyGreen = Color(0xFF045D56);

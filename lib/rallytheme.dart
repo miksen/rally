@@ -32,8 +32,7 @@ ThemeData buildRallyThemeData(BuildContext context) {
         fontWeight: FontWeight.w500,
       ),
       display2: TextStyle(
-        // TODO: This should be 96, but need to make the main viewport scrollable or it wont fit
-        fontSize: 50.0,
+        fontSize: 96.0,
         fontWeight: FontWeight.w100,
       ),
     ),
@@ -47,7 +46,12 @@ ThemeData buildRallyThemeData(BuildContext context) {
         ),
       ),
     ),
-    cardTheme: CardTheme(color: rallyCardBackground),
-    buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.accent),
+    cardTheme: CardTheme(
+      margin: EdgeInsets.all(0),
+    ),
+    buttonTheme: ButtonThemeData(
+      textTheme: ButtonTextTheme.accent,
+      minWidth: 48,
+    ),
   );
 }

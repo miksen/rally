@@ -32,10 +32,12 @@ class RallyHome extends StatelessWidget {
   Widget buildBody(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16),
-      child: Column(
+      child: ListView(
         children: <Widget>[
           RallyAlertCard(),
+          SizedBox(height: 10),
           RallyAccountsCard(),
+          SizedBox(height: 10),
           RallyBillsCard(),
         ],
       ),

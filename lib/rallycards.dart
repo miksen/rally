@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
+// TODO: This is not integrated with the theme
+const cardInternalColor = Color(0xFF33333D);
+
+/**
+ * The Alerts card within the Rally Overview screen.
+ */
 class RallyAlertCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: cardInternalColor,
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -11,26 +18,31 @@ class RallyAlertCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
-                  'Alerts',
-                  style: Theme.of(context).textTheme.subtitle,
-                ),
-                FlatButton(onPressed: () {}, child: Text('See All')),
+                Text('Alerts', style: Theme.of(context).textTheme.subtitle),
+                FlatButton(onPressed: () {}, child: Text('See all')),
               ],
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-              child: Divider(height: 2),
+              child: Divider(
+                color: Theme.of(context).backgroundColor,
+                height: 2,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
-                  "Heads up, you've used up 90% of your\n" +
-                      "Shopping budget for this month.",
-                  style: Theme.of(context).textTheme.body1,
+                Expanded(
+                  child: Text(
+                    "Heads up, you've used up 90% of your " +
+                        "Shopping budget for this month.",
+                    style: Theme.of(context).textTheme.body1,
+                  ),
                 ),
-                FlatButton(onPressed: () {}, child: Text('Sort')),
+                FlatButton(
+                  onPressed: () {},
+                  child: Text('Sort'),
+                ),
               ],
             ),
           ],
@@ -44,6 +56,7 @@ class RallyAccountsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: cardInternalColor,
       child: Column(
         children: <Widget>[
           Padding(
@@ -58,7 +71,7 @@ class RallyAccountsCard extends StatelessWidget {
           ),
           Divider(
             color: Theme.of(context).accentColor,
-            height: 1,
+            height: 2,
           ),
           Padding(
             padding: const EdgeInsets.all(12),
@@ -115,12 +128,13 @@ class RallyAccountRow extends StatelessWidget {
           AccountIndicator(color: color),
           SizedBox(width: 8),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(name),
-              Text('•••••$number'),
+              Text(name, style: Theme.of(context).textTheme.body1),
+              Text('•••••$number', style: Theme.of(context).textTheme.subtitle),
             ],
           ),
-          Expanded(child: Text('')),
+          Expanded(child: Container()),
           Text('\$ $amount', style: Theme.of(context).textTheme.body2),
         ],
       ),
@@ -142,18 +156,20 @@ class AccountIndicator extends StatelessWidget {
 class RallyBillsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints(minWidth: double.infinity),
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            children: <Widget>[
-              Text('Bills', style: Theme.of(context).textTheme.subtitle),
-              Text('\$1,810.00', style: Theme.of(context).textTheme.display2),
-            ],
+    return Card(
+      color: cardInternalColor,
+      child: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              children: <Widget>[
+                Text('Bills', style: Theme.of(context).textTheme.subtitle),
+                Text('\$1,810', style: Theme.of(context).textTheme.display2),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
